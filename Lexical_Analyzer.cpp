@@ -59,7 +59,6 @@ bool validKeyword(char *str)
 
 
 bool validDigit(char* str){
-
     int i,len=strlen(str),numOfDecimal=0;
     if(len==0)
     {
@@ -149,14 +148,9 @@ int main() {
     string line;
     while(getline(MyReadFile, line))
      {
-        // Convert the string to a char array for the parse function
         char* str = new char[line.length() + 1];
         strcpy(str, line.c_str());
-
-        // Call the parse function for the current line
         parse(str);
-
-        // Deallocate memory
         delete[] str;
     }
     MyReadFile.close();
